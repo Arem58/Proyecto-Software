@@ -1,0 +1,10 @@
+body{
+    background-color: #ffffff;
+}
+
+.hdr{
+    background-color: #0086FF;
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
