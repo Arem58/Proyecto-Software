@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    <style>
+           *{
+                margin: 0;
+                padding: 0;
+                text-decoration: none;
+                font-family: Helvetica;
+            }
+            .green{
+                background: #51D146;
+                width: 100%;
+                height: 120px;
+                display: flex;
+                align-items: center;
+                float: left;
+            }
+            input, label {
+                display:block;
+            }
+            .cuadrado{
+            height: 60%;
+            width: 40%;
+            position: absolute;
+            border-radius: 5%;
+            padding: 80px 40px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+            .cuadrado form img{
+                position: relative;
+                height: 150px;
+                margin: 20px 20px 0px 20px;
+            }
+            .txtb{
+                border-bottom: 2px solid #adadad;
+                position: relative;
+                margin: 10px 0;
+            }
+            .txtb input{
+                font-size: 15px;
+                color: #333;
+                border: none;
+                width: 100%;
+                outline: none;
+                background: white;
+                padding: 0 5px;
+                height: 30px;
+                display: block;
+            }
+            .focus + span::before{
+                top: -5px;
+            }
+            .focus + span::after{
+                width: 100%;
+                bottom: -2px;
+                left:0;
+            }
+            .logbtn{
+                display: block;
+            }
+            button{
+                position: relative;
+            }
+            button{
+                background: #4db8ff;
+                color: white;
+                width: 100%;
+                height: 50px;
+                border: 1px ;
+                font-size: 20px;
+                overflow: hidden;
+                transition: .6s;
+                margin-top: 30px;;
+            }
+            button:focus{
+                outline: none;
+            }
+
+            button:before{
+                content: '';
+                display: block;
+                position: absolute;
+                background: rgb(255, 255, 255,.5);
+                width: 60px;
+                height: 100%;
+                left: 0;
+                top: 0;
+                opacity: .5s;
+                filter: blur(30px);
+                transform: rotateX(-130px) skewX(-15deg);
+            }
+            button::after{
+                content: '';
+                display: block;
+                position: absolute;
+                background: rgb(255, 255, 255,.2);
+                width: 30px;
+                height: 100%;
+                left: 30px;
+                top: 0;
+                opacity: 0;
+                filter: blur(30px);
+                transform: translate(-100px) scaleX(-15deg);
+            }
+            button:hover{
+                background: #3e413e;
+                cursor: pointer;
+            }
+            button:hover:before{
+                transform: translateX(300px) skewX(-15deg);
+                opacity: .6;
+                transition: .7s;
+            }
+            button:hover::after{
+                transform: translateX(300px) skewX(-15deg);
+                opacity: 1;
+                transition: .7s;
+            }
+       </style>
+       <body>
+            <div class="green"></div>
+            <div class="cuadrado">
+                <form action="index.html">
+                    <img src="descarga.png">    
+
+                    <div class="txtb">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="name" name="fname">
+                    </div>
+
+                    <div class="txtb">
+                        <p>Last Name:</p>
+                        <input type="password" id="lastName" name="lastName">
+                    </div>
+
+                    <div class="txtb">
+                        <p>Email:</p>
+                        <input type="text" id="email" name="email">
+                    </div>
+
+                    <div class="txtb">
+                        <p>Password:</p>
+                        <input type="password" id="password" name="password">
+                    </div>
+                    
+                    <button id="Submit" >Submit</button>
+                    
+                </form>
+            </div>
+       </body>
+   </head>
+</html>
