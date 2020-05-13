@@ -1,15 +1,15 @@
 # Proyecto-Software
 
-Una interfaz gráfica útili y eficiente que muestra, crea y modifca reportes, salarios y formularios de productos textiles.
+Una interfaz grafica util y eficiente que muestra, crea y modifca reportes, salarios y formularios de productos textiles.
 
-## Instalación
+## Instalacion
 Se debe tener Node.js version 10.00.0++.
-Una vez que se haya descargado, se deberá descargar electron el proyecto para iniciar el proyecto con el siguiente comando:
+Una vez que se haya descargado, se deberï¿½ descargar electron el proyecto para iniciar el proyecto con el siguiente comando:
 
 ```bash
 npm install electron
 ```
-Ya descargado electron, podrá iniciar el proyecto con el siguiente comando: 
+Ya descargado electron, podrï¿½ iniciar el proyecto con el siguiente comando: 
 
 ```bash
 npm install electron
@@ -17,3 +17,10 @@ npm install electron
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+
+##  PolÃ­meros y Hule
+
+La empresa PolÃ­meros y Hule se especializa en la fabricaciÃ³n de masterbatch y 
+mezclas de todo tipo de hule, productos para la industria de calzado, 
+materiales de reencauche, construcciÃ³n y piezas tÃ©cnicas.
