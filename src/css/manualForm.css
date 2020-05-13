@@ -124,18 +124,11 @@ padding: 5rem 16rem 5rem 0rem;
 	margin-right: 40%;	
 }
 
-.Editar__imagen {
-	background: url('images/editar.png') no-repeat;
+.usuario__imagen {
+	background: url('icon4.jpeg') no-repeat;
 	width: 5rem;
 	height: 5rem;
 	padding: 1rem 2rem 0rem 1rem;
-}
-
-.Eliminar__imagen {
-	background: url(images/eliminar.png) no-repeat;
-	width: 5rem;
-	height: 5rem;
-	padding: 1rem 2rem 1rem 1rem;
 }
 
 .Usuario__imagen {
