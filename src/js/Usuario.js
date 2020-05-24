@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize')
+const { QueryTypes } = require('sequelize')
 
 var db_config ={
     host: 'localhost',
@@ -50,34 +51,52 @@ function addUser(){
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
 
-    Users.create({
-        first_name: firstName,
-        last_name: lastName,
-        email: email,
-        password: password,
-        type: 'admin'
-    });
+    Users.count({where: {email: email}}).then(c => {
+        if(c == 0 && firstName != "" && lastName != "" && email != "" && password != ""){
+            Users.create({
+                first_name: firstName,
+                last_name: lastName,
+                email: email,
+                password: password,
+                type: 'admin'
+            });
+            alert("Usuario creado con exito.")
+            window.location="../html/login.html"
+        }
+        else{
+
+            throw error
+        }
+        return c
+    }).catch(err => {
+        return err;
+    })
+
+    
 }
 
 function checkUser(){
     var email = document.getElementById('email').value;
     var passwd = document.getElementById('passwd').value;
 
-    const count = Users.count({
-        where:{
-            email: email,
-            password: passwd
+    Users.count({where: {email: email, password: passwd}}).then(c => {
+        if(c == 0){
+            throw error;
         }
-    });
-
-    if(count == 1){
-        console.log("EXITO ")
-    } else if(count ==0){
-        console.log("USUARIO NO ENCONTRADO")
-    };
+        else{
+            console.log("ALV")
+            console.log(c)
+            alert("Bienvenido.")
+            window.location="../html/mainmenu.html"
+        }
+        return c
+    }).catch(err => {
+        alert("Usuario no registrado.")
+        return err;
+    })
     
 }
 
-//document.getElementById("Submit").onclick = addUser();
-document.getElementById("signIn").conClick = checkUser();
+document.getElementById("Submit").onclick = addUser();
+document.getElementById("signIn").onClick = checkUser();
 

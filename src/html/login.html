@@ -33,20 +33,21 @@
             var email = document.getElementById('email').value;
             var passwd = document.getElementById('passwd').value;
 
-            var count = Users.count({
-                where:{
-                    email: email,
-                    password: passwd
+            Users.count({where: {email: email, password: passwd}}).then(c => {
+                if(c == 0){
+                    throw error;
                 }
-            });
-
-            if(count > 0){
-                console.log("EXITO ")
-            } else if(count == 0){
-                console.log("USUARIO NO ENCONTRADO")
-            };
-
-            console.log(count);
+                else{
+                    console.log("ALV")
+                    console.log(c)
+                    alert("Bienvenido.")
+                    window.location="../html/mainmenu.html"
+                }
+                return c
+            }).catch(err => {
+                alert("Usuario no registrado.")
+                return err;
+            })
             
         }
 

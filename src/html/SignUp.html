@@ -172,13 +172,28 @@
             var email = document.getElementById('email').value;
             var password = document.getElementById('password').value;
 
-            Users.create({
-                first_name: firstName,
-                last_name: lastName,
-                email: email,
-                password: password,
-                type: 'admin'
-            });
+            Users.count({where: {email: email}}).then(c => {
+                if(c == 0 && firstName != "" && lastName != "" && email != "" && password != ""){
+                    Users.create({
+                        first_name: firstName,
+                        last_name: lastName,
+                        email: email,
+                        password: password,
+                        type: 'admin'
+                    });
+                    alert("Usuario creado con exito.")
+                    window.location="../html/login.html"
+                }
+                else{
+
+                    throw error
+                }
+                return c
+            }).catch(err => {
+                return err;
+            })
+
+            
         }
     </script>
 </html>
