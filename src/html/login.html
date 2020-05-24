@@ -3,9 +3,8 @@
     <head>        
         <meta charset="utf-8">
         <link rel="stylesheet" href="../css/login.css">
-        <style>
-            
-        </style>
+        <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+
         
     </head>
 
@@ -13,17 +12,20 @@
         <div class="hdr"></div>
         <img src="../css/logo.png" alt="" class="logo">
         <div class="txt">
-            <p>Usuario</p>
-            <input type="text" class="usr">
+            <p>e-mail</p>
+            <input type="text" class="usr" id="email">
         </div>
         <div class="txt">
             <p>Contraseña</p>
-            <input type="text" class="pass">
+            <input type="password" class="pass" id="password">
         </div>
         <div class="botones">
-            <button class="log">Ingresar</button>
-            <button class="reg">Registrarse</button>
+            <button class="log" id="signIn">Ingresar</button>
+            <input class="reg" type="button" value="Regristrarse"
+            onclick="window.location.href='./SignUp.html'" id="signUp"/>
         </div>
     </body>
+    <script type="module" src="../js/Usuario.js" >
+    </script>
 
 </html>

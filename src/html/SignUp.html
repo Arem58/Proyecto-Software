@@ -127,6 +127,7 @@
                 transition: .7s;
             }
        </style>
+       </head>
        <body>
             <div class="green"></div>
             <div class="cuadrado">
@@ -134,29 +135,50 @@
                     <img src="descarga.png">    
 
                     <div class="txtb">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="name" name="fname">
+                        <label for="subject">Nombre</label>
+                        <input type="text" id="name" name="name">
                     </div>
 
                     <div class="txtb">
-                        <p>Last Name:</p>
-                        <input type="password" id="lastName" name="lastName">
+                        <p>Apellido</p>
+                        <input type="text" id="lastName" name="lastName">
                     </div>
 
                     <div class="txtb">
-                        <p>Email:</p>
+                        <p>Email</p>
                         <input type="text" id="email" name="email">
                     </div>
 
                     <div class="txtb">
-                        <p>Password:</p>
+                        <p>Contraseña</p>
                         <input type="password" id="password" name="password">
                     </div>
                     
-                    <button id="Submit" >Submit</button>
+                    <button id="Submit" onclick="addUser()">Registrarse</button>
+                    
                     
                 </form>
             </div>
+            <input type="button" id="Submit" value="Regristrarse"
+                    onclick="addUser();">
        </body>
-   </head>
+       
+   
+   <script type="text/javascript" src="../js/Usuario.js"></script>
+   <script type="text/javascript" src="../js/Usuario.js">
+        function addUser(){
+            var firstName = document.getElementById('name').value;
+            var lastName = document.getElementById('lastName').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            Users.create({
+                first_name: firstName,
+                last_name: lastName,
+                email: email,
+                password: password,
+                type: 'admin'
+            });
+        }
+    </script>
 </html>

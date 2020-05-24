@@ -13,6 +13,17 @@ button{
     margin-left: 1rem;
     margin-right: 2rem;
 }
+.reg{
+    position: relative;
+    width: 150px;
+    height: 60px;
+    border-radius: 5%;
+    background-color: #66a5ec;
+    border: none;
+    color: white;
+    margin-left: 1rem;
+    margin-right: 2rem;
+}
 
 input{
     width: 100%;
@@ -33,11 +44,9 @@ p{
 
 .botones{
     position: relative;
-    margin: 2rem auto;
-    text-align: center;
-    top: 30px;
-    
-    display: block;
+    top: 30px;    
+    display: inline-flex;    
+    left: 40%;
 }
 .hdr{
     background-color: #4fb142;
@@ -49,9 +58,7 @@ p{
 .bg1{
     width: 100px;
     height: 100px;
-
-    position: relative;
-    
+    position: relative;    
 }
 
 .logo{
