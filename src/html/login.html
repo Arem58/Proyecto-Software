@@ -17,10 +17,10 @@
         </div>
         <div class="txt">
             <p>Contraseña</p>
-            <input type="password" class="pass" id="password">
+            <input type="password" class="pass" id="passwd">
         </div>
         <div class="botones">
-            <button class="log" id="signIn">Ingresar</button>
+            <input class="log" type="button" value="Ingresar" onclick="checkUser();" id="signIn"/>
             <input class="reg" type="button" value="Regristrarse"
             onclick="window.location.href='./SignUp.html'" id="signUp"/>
         </div>
@@ -31,22 +31,25 @@
     <script type="text/javascript" src="../js/Usuario.js">
         function checkUser(){
             var email = document.getElementById('email').value;
-            var password = document.getElementById('password').value;
+            var passwd = document.getElementById('passwd').value;
 
-            const count = Users.findAndCountAll({
+            var count = Users.count({
                 where:{
                     email: email,
-                    password: password
+                    password: passwd
                 }
-            })
+            });
 
-            if(count == 1){
-                console.log("EXITO ALV!")
-            } else {
-                console.log("SOY UN IMBECIL ALV")
+            if(count > 0){
+                console.log("EXITO ")
+            } else if(count == 0){
+                console.log("USUARIO NO ENCONTRADO")
             };
 
+            console.log(count);
+            
         }
+
     </script>
 
 </html>

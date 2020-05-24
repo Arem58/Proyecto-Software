@@ -61,23 +61,23 @@ function addUser(){
 
 function checkUser(){
     var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+    var passwd = document.getElementById('passwd').value;
 
-    const count = Users.findAndCountAll({
+    const count = Users.count({
         where:{
             email: email,
-            password: password
+            password: passwd
         }
     });
 
-    if(count >= 1){
+    if(count == 1){
         console.log("EXITO ")
-    } else {
+    } else if(count ==0){
         console.log("USUARIO NO ENCONTRADO")
     };
     
 }
 
-document.getElementById("Submit").onclick = addUser();
+//document.getElementById("Submit").onclick = addUser();
 document.getElementById("signIn").conClick = checkUser();
 

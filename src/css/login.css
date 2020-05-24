@@ -13,6 +13,24 @@ button{
     margin-left: 1rem;
     margin-right: 2rem;
 }
+
+
+input{
+    width: 100%;
+    height: 30px;
+    position: relative;
+    border-bottom: black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid black;
+}
+
+p{
+    position: relative;
+    text-align: left;
+}
+
 .reg{
     position: relative;
     width: 150px;
@@ -25,21 +43,16 @@ button{
     margin-right: 2rem;
 }
 
-input{
-    width: 100%;
-    height: 30px;   
-    left: 0%;
+.log{
     position: relative;
-    border-bottom: black;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 2px solid black;
-}
-
-p{
-    position: relative;
-    text-align: left;
+    width: 150px;
+    height: 60px;
+    border-radius: 5%;
+    background-color: #66a5ec;
+    border: none;
+    color: white;
+    margin-left: 1rem;
+    margin-right: 2rem;
 }
 
 .botones{
