@@ -44,8 +44,6 @@ const Users = sequelize.define('Usuario',{
 
 Users.sync()
 
-
-
 function addUser(){
     var firstName = document.getElementById('name').value;
     var lastName = document.getElementById('lastName').value;
@@ -61,5 +59,25 @@ function addUser(){
     });
 }
 
+function checkUser(){
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+
+    const count = Users.findAndCountAll({
+        where:{
+            email: email,
+            password: password
+        }
+    });
+
+    if(count >= 1){
+        console.log("EXITO ")
+    } else {
+        console.log("USUARIO NO ENCONTRADO")
+    };
+    
+}
+
 document.getElementById("Submit").onclick = addUser();
+document.getElementById("signIn").conClick = checkUser();
 

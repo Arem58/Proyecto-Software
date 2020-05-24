@@ -25,7 +25,28 @@
             onclick="window.location.href='./SignUp.html'" id="signUp"/>
         </div>
     </body>
-    <script type="module" src="../js/Usuario.js" >
+    
+    <script type="text/javascript" src="../js/Usuario.js" >
+    </script>
+    <script type="text/javascript" src="../js/Usuario.js">
+        function checkUser(){
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            const count = Users.findAndCountAll({
+                where:{
+                    email: email,
+                    password: password
+                }
+            })
+
+            if(count == 1){
+                console.log("EXITO ALV!")
+            } else {
+                console.log("SOY UN IMBECIL ALV")
+            };
+
+        }
     </script>
 
 </html>
