@@ -29,12 +29,22 @@
 					<div class="Formulario">
 						<h1>Formulario</h1>
 						<div class="Cuadro_de_ingreso">
-							<h3>No. Formulario:</h3>
-							<div class="placeholder"></div>
-							<h3>Fecha:</h3>
-							<div class="placeholder"></div>
-							<h3>Operador:</h3>
-							<div class="placeholder"></div>
+							<h2>No. Formulario:</h2>
+							<input type="text" class="num">
+							<h2>Tipo de formulario:</h2>
+							<select name="tipoForm" id="formSelect">
+								<option value="empaque">Control de produccion de empaque</option>
+								<option value="prensas">Control de produccion de prensas</option>
+							</select>
+							<h2>Fecha:</h2>
+							<input type="date" class="fecha">
+							<h2>Semana:</h2>
+							<input type="number" id="semana" min="1" max="53">
+							<h2>mes:</h2>
+							<input type="number" id="mes" min="1" max="12">
+							<h2>Codigo Operador:</h2>
+							<h2>Codigo Producto:</h2>
+							<input type="number" id="producto" min="7220" max="9063">
 							<button class="Generar_formulario">Generar formulario</button>
 						</div>
 					</div>

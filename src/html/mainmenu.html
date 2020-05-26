@@ -3,7 +3,11 @@
     <head>
         <link rel="stylesheet" href="../css/mainmenu.css">
         <meta charset="utf-8">
-        
+        <script type="text/javascript" charset="utf-8">
+            function exitFromApp(){
+                w.close();
+            }
+        </script>
         
     </head>
 
@@ -16,16 +20,16 @@
             </div>
             <div class="center-content">
                 <div class="button-containers">
-                    <button>Ingreso Manual</button>
+                    <button onclick="window.location.href='./manualForm.html'">Ingreso Manual</button>
                 </div>
                 <div class="button-containers">
                     <button>Escanear Código</button>
                 </div>
                 <div class="button-containers">
-                    <button>Estadísticas</button>
+                    <button onclick="window.location.href='./salary.html'">Estadísticas</button>
                 </div>
-                <div class="button-containers">
-                    <button>Salir</button>
+                <div class="button-containers" onload="onLoad();">
+                    <button name="exit" onclick="exitFromApp()">Salir</button>
                 </div>
             </div>
 
@@ -34,7 +38,8 @@
             <div class="side-banner"></div>
         </div>
         
-        <script src="./src/js/mainmenu.js"></script>
+        <script src="../js/mainmenu.js"></script>
     </body>
+    
 
 </html>
