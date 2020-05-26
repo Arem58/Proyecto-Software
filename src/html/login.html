@@ -3,7 +3,6 @@
     <head>        
         <meta charset="utf-8">
         <link rel="stylesheet" href="../css/login.css">
-        <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
 
         
     </head>
@@ -45,7 +44,7 @@
                 }
                 return c
             }).catch(err => {
-                alert("Usuario no registrado.")
+                alert("Usuario o contraseña equivocado.")
                 return err;
             })
             
