@@ -91,23 +91,42 @@ padding: 5rem 16rem 5rem 0rem;
 	margin-left: 10%;
 	margin-right: 10%;
 	height: 120%;
-	padding-top: 5rem;
 }
 
-.Cuadro_de_ingreso h3 {
+.Cuadro_de_ingreso h2 {
 	color: black;
 	font-family: sans-serif;
 	font-weight: 100;
-	font-size: 6rem;	
-	margin-top: 10rem;
+	font-size: 4rem;	
+	margin-top: 5rem;
 	margin-left: 10rem;
 }
 
-.placeholder {
+input {
 	background: white;
 	margin-left: 10rem;
 	margin-right: 10rem;
-	height: 10rem;
+	height: 3.5%;
+	width: 30%;
+	font-size: 350%;
+}
+
+input[type=number] {
+	background: white;
+	margin-left: 10rem;
+	margin-right: 10rem;
+	height: 3.5%;
+	width: 5%;
+	font-size: 350%;
+}
+
+select{
+	background: white;
+	margin-left: 10rem;
+	margin-right: 10rem;
+	height: 4%;
+	width: 30%;
+	font-size: 400%;
 }
 
 .Generar_formulario {
