@@ -42,7 +42,7 @@ const vulcanizados = sequelize.define('vulcanizado',{
         type: Sequelize.INTEGER
     },
     prensa_id:{
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
     },
     producto_id:{
         type: Sequelize.INTEGER
@@ -63,7 +63,7 @@ const vulcanizados = sequelize.define('vulcanizado',{
         type: Sequelize.INTEGER
     },
     mes:{
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
     },
     producto_defecto:{
         type: Sequelize.INTEGER
@@ -71,16 +71,49 @@ const vulcanizados = sequelize.define('vulcanizado',{
     faltante_cargas:{
         type: Sequelize.INTEGER
     },
-    mes:{
+    total_cargas:{
         type: Sequelize.INTEGER
     },
-    type:{
+    kwh:{
+        type: Sequelize.INTEGER
+    },
+    paro_id:{
         type: Sequelize.STRING
-    }
-})
+    },
+    porcentaje_buen_estado:{
+        type: Sequelize.DOUBLE
+    },
+    porcentaje_cump_total:{
+        type: Sequelize.DOUBLE
+    },
+    cumplimiento_kg:{
+        type: Sequelize.DOUBLE
+    },
+    porcentaje_rebaba:{
+        type: Sequelize.DOUBLE
+    },
+    peso_producido:{
+        type: Sequelize.DECIMAL
+    },
+    peso_producir:{
+        type: Sequelize.DECIMAL
+    },
+    faltante:{
+        type: Sequelize.DECIMAL
+    },
+    rebaba:{
+        type: Sequelize.DECIMAL
+    },
+    fecha:{
+        type: Sequelize.DATE
+    },
+    
+    tableName: 'vulcanizado'
+    
+});
 
 
-vulcanizados.sync()
+vulcanizados.sync();
 
 
 const getValues = () => ({
@@ -99,6 +132,7 @@ const getValues = () => ({
     // fin primera col.
     porcentaje_cump_total : document.getElementById('porcentaje_cump_total').value, // double
     porcentaje_buen_estado : document.getElementById('porcentaje_buen_estado').value, // double
+    porcentaje_rebaba : document.getElementById('porcentaje_rebaba').value, // double
     paro_id : document.getElementById('paro').value,
     peso_producir : document.getElementById('peso_producir').value, // decimal
     peso_producido : document.getElementById('peso_producido').value,// decimal
@@ -110,14 +144,24 @@ const getValues = () => ({
     kwh : document.getElementById('kwh').value, // int
 });
 
-const printValues = () => {
+const saveToDb = (attributes) => {
+    console.logt('Attempting to save');
+    vulcanizados.create(
+        {...attributes}
+    );
+    console.logt('Post db.create()');
+};
+const getAndSaveValues = () => {
     values = getValues();
+    console.log('Got the values:');
+    console.log(values);
+    saveToDb(values);
 
 }
 
 const formButton = document.getElementById('form-button');
 
-formButton.setAttribute('onclick', 'printValues()');
+formButton.setAttribute('onclick', 'getAndSaveValues()');
 
 
 
