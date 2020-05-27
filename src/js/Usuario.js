@@ -1,21 +1,15 @@
 const Sequelize = require('sequelize')
 const { QueryTypes } = require('sequelize')
 
-// var db_config ={
-//     host: 'localhost',
-//     user: 'root',
-//     passwor: 'MySQL', //CAMBIAR ESTA CONTRASEÑA
-//     port: 3306,
-//     database: 'users'
-// }
+ var db_config ={
+     host: 'localhost',
+     user: 'root',
+     passwor: 'MySQL', //CAMBIAR ESTA CONTRASEÑA
+     port: 3306,
+     database: 'users'
+ }
 
-var db_config = {
-    host: 'localhost',
-    user: 'groot',
-    passwor: '7654321.', //CAMBIAR ESTA CONTRASEÑA
-    port: 3306,
-    database: 'polimeros'
-}
+
 
 var sequelize = new Sequelize('mysql://'+db_config.user+':'+db_config.passwor
 +'@'+db_config.host + ':' + db_config.port + '/' + db_config.database + '')
@@ -106,6 +100,6 @@ function checkUser(){
     
 }
 
-document.getElementById("Submit").onclick = addUser();
+document.getElementById("Submit").onClick = addUser();
 document.getElementById("signIn").onClick = checkUser();
 

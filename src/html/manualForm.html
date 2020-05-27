@@ -32,12 +32,12 @@
 							<div class="content">
 								<div class="f1">
 									<h2>No. Formulario:</h2>
-									<input type="text" id="num">									
+									<input type="number" id="num">									
 									<h2>Fecha:</h2>
 									<input type="date" id="fecha">
 									<h2>Semana:</h2>
 									<input type="number" id="semana" min="1" max="53">
-									<h2>mes:</h2>
+									<h2>Mes:</h2>
 									<input type="number" id="mes" min="1" max="12">
 									<h2>Codigo Operador:</h2>
 									<select name="operador" id="operador">
@@ -104,7 +104,7 @@
 
 								</div>
 							</div>	
-							<button class="Generar_formulario" id="ingresar">Ingresar Formulario</button>						
+							<button class="Generar_formulario" id="ingresar" onclick="ingresarForm()">Ingresar Formulario</button>						
 						</div>
 						
 					</div>
@@ -113,7 +113,58 @@
 		</div>
 	</body>
 	<script type="text/javascript" src="../js/empaque.js">
+		function ingresarForm(){
+			var noFormulario = document.getElementById('num').value;
+			var fecha = document.getElementById('fecha').value;
+			var semana = document.getElementById('semana').value;
+			var mes = document.getElementById('mes').value;
+			var codigoOp = document.getElementById('operador').value;
+			var codioProd = document.getElementById('producto').value;
+			var totalPeso = document.getElementById('totalPeso').value;
+			var totalProd = document.getElementById('totalProd').value;
+			var primeras = document.getElementById('primeras').value;
+			var pesoProdPrim = document.getElementById('pesoProdPrim').value;
+			var cumplimientoPrim = document.getElementById('cumplimientoPrim').value;
+			var segundas = document.getElementById('segundas').value;
+			var pesoProdSeg = document.getElementById('pesoProdSeg').value;
+			var cumplimientoSeg = document.getElementById('cumplimientoSeg').value;
+			var terceras = document.getElementById('terceras').value;
+			var pesoProdTer = document.getElementById('pesoProdTer').value;
+			var cumplimientoTer = document.getElementById('cumplimientoTer').value;
+			var motivoParo = document.getElementById('paro').value;
+			var noDiario = document.getElementById('noDiario').value;
 
+			if(noFormulario != null && fecha != null && semana != null && mes != null && codigoOp != null && codioProd != null && totalPeso != null && totalProd != null && primeras != null && pesoProdPrim != null && cumplimientoPrim != null && segundas != null && pesoProdSeg != null && cumplimientoSeg != null && terceras != null && pesoProdTer != null && cumplimientoTer != null && motivoParo != null && noDiario != null)
+			{
+				Empaque.create({
+					id: noFormulario,
+					semana: semana,
+					mes: mes,
+					fecha: fecha,
+					operador_id: codigoOp,
+					producto_id: codigoOp,
+					total_prod: totalProd,
+					total_peso: totalPeso,
+					primeras: primeras,
+					peso_prod_prim: pesoProdPrim,
+					cumplimiento_prim: cumplimientoPrim,
+					segundas: segundas,
+					peso_prod_seg: pesoProdSeg,
+					cumplimiento_seg: cumplimientoSeg,
+					terceras: terceras,
+					peso_prod_ter: pesoProdTer,
+					cumplimiento_ter: cumplimientoTer,
+					paro_id: motivoParo,
+					no_diario: noDiario
+				});
+			}
+			else
+			{
+				alert("Uno o mas campos estan vacios.");
+				window.location="../html/manualForm.html";
+			}
+			
+		}
 	</script>
 
 </html>

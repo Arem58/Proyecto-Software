@@ -28,7 +28,7 @@ const Empaque = sequelize.define('Empaque',{
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: false
     },
     semana: {
         type: Sequelize.INTEGER
@@ -87,6 +87,65 @@ const Empaque = sequelize.define('Empaque',{
 
 })
 
-
 Empaque.sync()
+
+
+function ingresarForm(){
+    var noFormulario = document.getElementById('num').value;
+    var fecha = document.getElementById('fecha').value;
+    var semana = document.getElementById('semana').value;
+    var mes = document.getElementById('mes').value;
+    var codigoOp = document.getElementById('operador').value;
+    var codioProd = document.getElementById('producto').value;
+    var totalPeso = document.getElementById('totalPeso').value;
+    var totalProd = document.getElementById('totalProd').value;
+    var primeras = document.getElementById('primeras').value;
+    var pesoProdPrim = document.getElementById('pesoProdPrim').value;
+    var cumplimientoPrim = document.getElementById('cumplimientoPrim').value;
+    var segundas = document.getElementById('segundas').value;
+    var pesoProdSeg = document.getElementById('pesoProdSeg').value;
+    var cumplimientoSeg = document.getElementById('cumplimientoSeg').value;
+    var terceras = document.getElementById('terceras').value;
+    var pesoProdTer = document.getElementById('pesoProdTer').value;
+    var cumplimientoTer = document.getElementById('cumplimientoTer').value;
+    var motivoParo = document.getElementById('paro').value;
+    var noDiario = document.getElementById('noDiario').value;
+
+    if(noFormulario != "" && fecha != "" && semana != "" && mes != "" && codigoOp != "" && codioProd != "" && totalPeso != "" && totalProd != "" && primeras != "" && pesoProdPrim != "" && cumplimientoPrim != "" && segundas != "" && pesoProdSeg != "" && cumplimientoSeg != "" && terceras != "" && pesoProdTer != "" && cumplimientoTer != "" && motivoParo != "" && noDiario != "")
+    {
+        Empaque.create({
+            id: noFormulario,
+            semana: semana,
+            mes: mes,
+            fecha: fecha,
+            operador_id: codigoOp,
+            producto_id: codigoOp,
+            total_prod: totalProd,
+            total_peso: totalPeso,
+            primeras: primeras,
+            peso_prod_prim: pesoProdPrim,
+            cumplimiento_prim: cumplimientoPrim,
+            segundas: segundas,
+            peso_prod_seg: pesoProdSeg,
+            cumplimiento_seg: cumplimientoSeg,
+            terceras: terceras,
+            peso_prod_ter: pesoProdTer,
+            cumplimiento_ter: cumplimientoTer,
+            paro_id: motivoParo,
+            no_diario: noDiario
+        })
+        alert("Formulario ingresado")
+        location.reload();
+    }
+    else
+    {
+        alert("Uno o mas campos estan vacios.");
+        location.reload();
+    }
+    
+}
+
+document.getElementById("ingresar").onClick = ingresarForm;
+
+
 
