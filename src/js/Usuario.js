@@ -32,12 +32,11 @@ const Users = sequelize.define('Usuario',{
         type: Sequelize.STRING
     },
     email:{
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        primaryKey: true,
+        autoIncrement: false
     },
     password:{
-        type: Sequelize.STRING
-    },
-    type:{
         type: Sequelize.STRING
     }
 })
@@ -46,6 +45,7 @@ const Users = sequelize.define('Usuario',{
 Users.sync()
 
 function addUser(){
+    console.log("BOTON APACHADO")
     var firstName = document.getElementById('name').value;
     var lastName = document.getElementById('lastName').value;
     var email = document.getElementById('email').value;
@@ -91,6 +91,7 @@ function checkUser(){
         }
         return c
     }).catch(err => {
+        window.location="../html/login.html"
         alert("Usuario no registrado.")
         return err;
     })

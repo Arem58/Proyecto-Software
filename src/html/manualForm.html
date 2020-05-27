@@ -32,12 +32,7 @@
 							<div class="content">
 								<div class="f1">
 									<h2>No. Formulario:</h2>
-									<input type="text" id="num">
-									<h2>Tipo de formulario:</h2>
-									<select name="tipoForm" id="formSelect">
-										<option value="empaque">Control de produccion de empaque</option>
-										<option value="prensas">Control de produccion de prensas</option>
-									</select>
+									<input type="text" id="num">									
 									<h2>Fecha:</h2>
 									<input type="date" id="fecha">
 									<h2>Semana:</h2>
@@ -65,12 +60,12 @@
 									<h2>Total Peso</h2>
 									<input type="number" id="totalPeso" min="0">
 									<h2>Primeras</h2>
-									<input type="number" id="primeras" min="0">															
+									<input type="number" id="primeras" min="0">	
+									<h2>Peso producido primeras</h2>
+									<input type="number" id="pesoProdPrim" min="0">														
 									
 								</div>
-								<div class="f2">
-									<h2>Peso producido primeras</h2>
-									<input type="number" id="pesoProdPrim" min="0">
+								<div class="f2">									
 									<h2>Cumplimiento prima (porcentaje)</h2>
 									<input type="number" id="cumplimientoPrim" min="0">
 									<h2>Segundas</h2>
@@ -109,7 +104,7 @@
 
 								</div>
 							</div>	
-							<button class="Generar_formulario">Generar formulario</button>						
+							<button class="Generar_formulario" id="ingresar">Ingresar Formulario</button>						
 						</div>
 						
 					</div>
@@ -117,4 +112,8 @@
 			</div>
 		</div>
 	</body>
+	<script type="text/javascript" src="../js/empaque.js">
+
+	</script>
+
 </html>
