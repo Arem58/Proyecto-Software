@@ -8,7 +8,7 @@ var db_config ={
     user: 'root',
     passwor: 'MySQL', //CAMBIAR ESTA CONTRASEÑA
     port: 3306,
-    database: 'users'
+    database: 'prensas'
 }
 
 // var db_config = {
