@@ -1,21 +1,15 @@
 const Sequelize = require('sequelize')
 const { QueryTypes } = require('sequelize')
 
-// var db_config ={
-//     host: 'localhost',
-//     user: 'root',
-//     passwor: 'MySQL', //CAMBIAR ESTA CONTRASEÑA
-//     port: 3306,
-//     database: 'users'
-// }
+ var db_config ={
+     host: 'localhost',
+     user: 'root',
+     passwor: 'MySQL', //CAMBIAR ESTA CONTRASEÑA
+     port: 3306,
+     database: 'users'
+ }
 
-var db_config = {
-    host: 'localhost',
-    user: 'groot',
-    passwor: '7654321.', //CAMBIAR ESTA CONTRASEÑA
-    port: 3306,
-    database: 'polimeros'
-}
+
 
 var sequelize = new Sequelize('mysql://'+db_config.user+':'+db_config.passwor
 +'@'+db_config.host + ':' + db_config.port + '/' + db_config.database + '')
@@ -40,12 +34,11 @@ const Users = sequelize.define('Usuario',{
         type: Sequelize.STRING
     },
     email:{
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        primaryKey: true,
+        autoIncrement: false
     },
     password:{
-        type: Sequelize.STRING
-    },
-    type:{
         type: Sequelize.STRING
     }
 })
@@ -54,6 +47,7 @@ const Users = sequelize.define('Usuario',{
 Users.sync()
 
 function addUser(){
+    console.log("BOTON APACHADO")
     var firstName = document.getElementById('name').value;
     var lastName = document.getElementById('lastName').value;
     var email = document.getElementById('email').value;
@@ -99,12 +93,13 @@ function checkUser(){
         }
         return c
     }).catch(err => {
+        window.location="../html/login.html"
         alert("Usuario no registrado.")
         return err;
     })
     
 }
 
-document.getElementById("Submit").onclick = addUser();
+document.getElementById("Submit").onClick = addUser();
 document.getElementById("signIn").onClick = checkUser();
 

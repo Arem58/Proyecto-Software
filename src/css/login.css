@@ -92,7 +92,14 @@ p{
     height: auto;
 }
 
+<<<<<<< HEAD
+/*.pass{
+    position: relative;
+    right: 50%;
+}*/
+=======
 /* .pass{
     position: relative;
     right: 50%;
 } */
+>>>>>>> 6d3d89d04597a895c66c7d9352f4d319ea1eec11
