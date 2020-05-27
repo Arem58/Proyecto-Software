@@ -147,7 +147,11 @@
             <div class="green"></div>
             <div class="cuadrado">
                 <form action="index.html">
+<<<<<<< HEAD
+                    <img src="../css/logo.png" alt="" >    
+=======
                     <img src="../css/logo.png">    
+>>>>>>> f11e680cdc5dd3d445dc20c6b9360356689b04bf
 
                     <div class="txtb">
                         <label for="subject">Nombre</label>
@@ -174,7 +178,10 @@
                     
                 </form>
             </div>
+<<<<<<< HEAD
+=======
             <input type="button" id="Submit" value="Regristrarse" class="sub" onclick="addUser();">
+>>>>>>> f11e680cdc5dd3d445dc20c6b9360356689b04bf
        </body>
        
    
@@ -185,6 +192,7 @@
             var lastName = document.getElementById('lastName').value;
             var email = document.getElementById('email').value;
             var password = document.getElementById('password').value;
+            console.log('got the values, attepmtping db insert');
 
             Users.count({where: {email: email}}).then(c => {
                 if(c == 0 && firstName != "" && lastName != "" && email != "" && password != ""){

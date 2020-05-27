@@ -4,6 +4,10 @@ body {
     display: flex;
 }
 
+.board {
+    background: darkcyan;
+}
+
 .center{
     flex-grow: 4;
     width: 80%;
