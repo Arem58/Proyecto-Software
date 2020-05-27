@@ -3,21 +3,21 @@ const remote = require('electron').remote
 const Sequelize = require('sequelize')
 const { QueryTypes } = require('sequelize')
 
-// var db_config ={
-//     host: 'localhost',
-//     user: 'root',
-//     passwor: 'MySQL', //CAMBIAR ESTA CONTRASEÑA
-//     port: 3306,
-//     database: 'users'
-// }
-
-var db_config = {
+var db_config ={
     host: 'localhost',
-    user: 'groot',
-    passwor: '7654321.', //CAMBIAR ESTA CONTRASEÑA
+    user: 'root',
+    passwor: 'MySQL', //CAMBIAR ESTA CONTRASEÑA
     port: 3306,
-    database: 'prensas'
+    database: 'users'
 }
+
+// var db_config = {
+//     host: 'localhost',
+//     user: 'groot',
+//     passwor: '7654321.', //CAMBIAR ESTA CONTRASEÑA
+//     port: 3306,
+//     database: 'prensas'
+// }
 
 var sequelize = new Sequelize('mysql://'+db_config.user+':'+db_config.passwor
 +'@'+db_config.host + ':' + db_config.port + '/' + db_config.database + '')
