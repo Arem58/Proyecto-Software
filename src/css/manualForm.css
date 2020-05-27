@@ -23,13 +23,14 @@ background-color: #f1f6f6;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	overflow: auto;
+	height: 150%;
 }
 
 .menu_de_opciones {
+	position: fixed;
 	background: greenyellow;
-	width: 15%;
-	height: 1300px;
+	width: 10%;
+	height: 100%;
 }
 
 li{
@@ -42,7 +43,7 @@ padding: 5rem 16rem 5rem 0rem;
 	align-items: stretch;
 	display: flex;
 	flex-direction: column;
-	width: 100%
+	width: 100%;
 }
 
 .Encabezado__contenido {
@@ -87,10 +88,16 @@ padding: 5rem 16rem 5rem 0rem;
 }
 
 .Cuadro_de_ingreso {
+	position: relative;	
 	background: rgb(197, 197, 197);
 	margin-left: 10%;
 	margin-right: 10%;
-	height: 120%;
+	height: 117%;
+	left: 50px;
+	width: 75%;
+}
+.content{
+	display: flex;
 }
 
 .Cuadro_de_ingreso h2 {
@@ -107,7 +114,7 @@ input {
 	margin-left: 10rem;
 	margin-right: 10rem;
 	height: 3.5%;
-	width: 30%;
+	width: 40%;
 	font-size: 350%;
 }
 
@@ -115,8 +122,7 @@ input[type=number] {
 	background: white;
 	margin-left: 10rem;
 	margin-right: 10rem;
-	height: 3.5%;
-	width: 5%;
+	width: 15%;
 	font-size: 350%;
 }
 
@@ -125,22 +131,24 @@ select{
 	margin-left: 10rem;
 	margin-right: 10rem;
 	height: 4%;
-	width: 30%;
+	width: 40%;
 	font-size: 400%;
 }
 
 .Generar_formulario {
 	background: rgb(58, 156, 248);
 	color: white;
+	border: none;
 	font-family: sans-serif;
 	font-weight: 100;
 	font-size: 6rem;
 	border-radius: 5px;
 	height: 5%;
 	padding: 10px 10px 30px 10px;
-	margin-top: 10%;
+	margin-top: 5%;
 	margin-left: 40%;
-	margin-right: 40%;	
+	margin-right: 40%;
+	bottom: auto;	
 }
 
 .usuario__imagen {
@@ -160,5 +168,14 @@ select{
 	background: url('images/agregar_paquete.png') no-repeat;
 	justify-content: center;
 	padding: 10rem 10rem 10rem 50rem;
+}
+.f2{
+	width: 50%;
+	height: 100%;
+}
+
+.f1{
+	width: 50%;
+	height: 100%;
 }
 
