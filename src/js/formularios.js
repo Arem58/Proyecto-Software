@@ -177,6 +177,7 @@ function ingresarForm(){
             kwh : kwh, // int
         }).then(c => {
             console.log(c)
+            alert("Formulario ingresado exitosamente.");
         })
         //alert("Formulario ingresado")
         //location.reload();
@@ -188,5 +189,20 @@ function ingresarForm(){
     }
 }
 
+const preFillFecha = () => {
+    let fecha = document.getElementById('fecha').value;
+    let mes = document.getElementById('mes');
+    let semana = document.getElementById('semana');
+    let m = fecha.slice(5,7);
+    semana.value = '22';
+    mes.value = m;  //fill mess
+    let d = fecha.slice(8);
+    
+
+    console.log(fecha, typeof(fecha));
+};
+
+fecha = document.getElementById("fecha");
+fecha.setAttribute('onchange', 'preFillFecha()');
 document.getElementById("form-button").onClick = ingresarForm;
 

@@ -134,7 +134,7 @@ function ingresarForm(){
             paro_id: motivoParo,
             no_diario: noDiario
         })
-        alert("Formulario ingresado")
+        alert("Formulario ingresado exitosamente.");
         location.reload();
     }
     else
@@ -144,7 +144,21 @@ function ingresarForm(){
     }
     
 }
+const preFillFecha = () => {
+    let fecha = document.getElementById('fecha').value;
+    let mes = document.getElementById('mes');
+    let semana = document.getElementById('semana');
+    let m = fecha.slice(5,7);
+    semana.value = '22';
+    mes.value = m;  //fill mess
+    let d = fecha.slice(8);
+    
 
+    console.log(fecha, typeof(fecha));
+};
+
+fecha = document.getElementById("fecha");
+fecha.setAttribute('onchange', 'preFillFecha()');
 document.getElementById("ingresar").onClick = ingresarForm;
 
 
