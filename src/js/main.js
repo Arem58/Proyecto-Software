@@ -1,4 +1,4 @@
-console.log('main process working') 
+console.log('este nunca se ejecuta') 
 console.log('main.js')
 const electron = require("electron")
 const app = electron.app
