@@ -7,9 +7,9 @@ body {
 background-color: #f1f6f6;
 }
 
-.Pagina__principal {
+/*.Pagina__principal {
 	height: 100%;
-}
+}*/
 
 .Contrasenas__imagen {
 	background: url('images/unlock.jpg') no-repeat;
@@ -99,7 +99,9 @@ padding: 5rem 16rem 5rem 0rem;
 .content{
 	display: flex;
 }
-
+.buttonBox{
+	display: flex;
+}
 .Cuadro_de_ingreso h2 {
 	color: black;
 	font-family: sans-serif;
@@ -146,8 +148,8 @@ select{
 	height: 5%;
 	padding: 10px 10px 30px 10px;
 	margin-top: 5%;
-	margin-left: 40%;
-	margin-right: 40%;
+	margin-left: auto;
+	margin-right: auto;
 	bottom: auto;	
 }
 

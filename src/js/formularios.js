@@ -34,9 +34,13 @@ sequelize.authenticate().then(()=>{
     console.log('=========================================')
 })
 
-const vulcanizados = sequelize.define('vulcanizado',{
+const Vulcanizados = sequelize.define('vulcanizado',{
     id: { // numero_formulario
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: false,
+        allowNull: false,
+        defaultValue: 1
     },
     operador_id:{
         type: Sequelize.INTEGER
@@ -93,82 +97,96 @@ const vulcanizados = sequelize.define('vulcanizado',{
         type: Sequelize.DOUBLE
     },
     peso_producido:{
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL(10,2)
     },
     peso_producir:{
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL(10,2)
     },
     faltante:{
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL(10,2)
     },
     rebaba:{
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL(10,2)
     },
     fecha:{
         type: Sequelize.DATE
     },
     
-    tableName: 'vulcanizado'
+    //tableName: 'vulcanizado'
     
 });
 
 
-vulcanizados.sync();
+Vulcanizados.sync();
 
 
-const getValues = () => ({
-    numero_formulario : document.getElementById('numero-formulario').value,
-    fecha : document.getElementById('fecha').value,
-    semana : document.getElementById('semana').value,
-    mes : document.getElementById('mes').value,
-    codigo_operador : document.getElementById('operador-id').value,
-    codigo_producto : document.getElementById('producto-id').value,
-    codigo_prensa : document.getElementById('prensa-id').value,
-    cargas_program : document.getElementById('cargas-program').value,
-    producto_defecto : document.getElementById('producto-defecto').value,
-    buen_estado : document.getElementById('buen-estado').value,
-    total_cargas : document.getElementById('total-cargas').value,
-    cargas_faltantes : document.getElementById('cargas-faltantes').value,
+function ingresarForm(){
+    var numeroFormulario = document.getElementById('numero-formulario').value
+    var fecha = document.getElementById('fecha').value
+    var semana = document.getElementById('semana').value
+    var mes = document.getElementById('mes').value
+    var codigoOperador = document.getElementById('operador-id').value
+    var codigoProducto = document.getElementById('producto-id').value
+    var codigoPrensa = document.getElementById('prensa-id').value
+    var cargasProgram = document.getElementById('cargas-program').value
+    var productoDefecto = document.getElementById('producto-defecto').value
+    var buenEstado = document.getElementById('buen-estado').value
+    var totalCargas = document.getElementById('total-cargas').value
+    var cargasFaltantes = document.getElementById('cargas-faltantes').value
     // fin primera col.
-    porcentaje_cump_total : document.getElementById('porcentaje_cump_total').value, // double
-    porcentaje_buen_estado : document.getElementById('porcentaje_buen_estado').value, // double
-    porcentaje_rebaba : document.getElementById('porcentaje_rebaba').value, // double
-    paro_id : document.getElementById('paro').value,
-    peso_producir : document.getElementById('peso_producir').value, // decimal
-    peso_producido : document.getElementById('peso_producido').value,// decimal
-    faltante : document.getElementById('faltante').value, // decimal
-    rebaba : document.getElementById('rebaba').value, // decimal
-    cumplimiento_kg : document.getElementById('cumplimiento_kg').value, // double
-    tiempo_real : document.getElementById('tiempo_real').value, // int
-    tiempo_no_utilizado : document.getElementById('tiempo_no_utilizado').value, // int
-    kwh : document.getElementById('kwh').value, // int
-});
+    var porcentajeCumpTotal = document.getElementById('porcentaje_cump_total').value // double
+    var porcentajeBuenEstado = document.getElementById('porcentaje_buen_estado').value // double
+    var porcentajeRebaba = document.getElementById('porcentaje_rebaba').value // double
+    var paroId = document.getElementById('paro').value
+    var pesoProducir = document.getElementById('peso_producir').value // decimal
+    var pesoProducido = document.getElementById('peso_producido').value// decimal
+    var faltante = document.getElementById('faltante').value // decimal
+    var rebaba = document.getElementById('rebaba').value // decimal
+    var cumplimientoKg = document.getElementById('cumplimiento_kg').value // double
+    var tiempoReal = document.getElementById('tiempo_real').value // int
+    var tiempoNoUtilizado = document.getElementById('tiempo_no_utilizado').value // int
+    var kwh = document.getElementById('kwh').value // int
 
-const saveToDb = (attributes) => {
-    console.logt('Attempting to save');
-    vulcanizados.create(
-        {...attributes}
-    );
-    console.logt('Post db.create()');
-};
-const getAndSaveValues = () => {
-    values = getValues();
-    console.log('Got the values:');
-    console.log(values);
-    saveToDb(values);
-
+    if(numeroFormulario != "" && fecha != "" && semana != "" && mes != "" && codigoOperador != "" && codigoProducto != "" && codigoPrensa != "" && cargasProgram != "" && productoDefecto != "" && buenEstado != "" && totalCargas != "" && cargasFaltantes != "" && porcentajeCumpTotal != "" && porcentajeBuenEstado != "" && pesoProducir != "" && pesoProducido != "" && faltante != "" && rebaba != "" && porcentajeRebaba != "" && cumplimientoKg != "" && paroId != "" && tiempoReal != "" && tiempoNoUtilizado != "" && kwh != "")
+    {
+        Vulcanizados.create({
+            numero_formulario : numeroFormulario,
+            fecha : fecha,
+            semana : semana,
+            mes : mes,
+            codigo_operador : codigoOperador,
+            codigo_producto : codigoProducto,
+            codigo_prensa : codigoPrensa,
+            cargas_program : cargasProgram,
+            producto_defecto : productoDefecto,
+            buen_estado : buenEstado,
+            total_cargas : totalCargas,
+            cargas_faltantes : cargasFaltantes,
+            // fin primera col.
+            porcentaje_cump_total : porcentajeCumpTotal, // double
+            porcentaje_buen_estado : porcentajeBuenEstado, // double
+            porcentaje_rebaba : porcentajeRebaba, // double
+            paro_id : paroId,
+            peso_producir : pesoProducir, // decimal
+            peso_producido : pesoProducido,// decimal
+            faltante : faltante, // decimal
+            rebaba : rebaba, // decimal
+            cumplimiento_kg : cumplimientoKg, // double
+            tiempo_real : tiempoReal, // int
+            tiempo_no_utilizado : tiempoNoUtilizado, // int
+            kwh : kwh, // int
+        }).then(c => {
+            console.log(c)
+        })
+        //alert("Formulario ingresado")
+        //location.reload();
+    }
+    else
+    {
+        alert("Uno o mas campos estan vacios.");
+        location.reload();
+    }
 }
 
-const formButton = document.getElementById('form-button');
-
-formButton.setAttribute('onclick', 'getAndSaveValues()');
-
-
-
-// render(root);
-
-let w = remote.getCurrentWindow()
-function exitFromApp(){
-    w.close();
-}
+document.getElementById("form-button").onClick = ingresarForm;
 
