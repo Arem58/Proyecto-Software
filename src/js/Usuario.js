@@ -58,6 +58,7 @@ function addUser(){
             Users.create({
                 first_name: firstName,
                 last_name: lastName,
+                //Nombre de usuario, no correo
                 email: email,
                 password: password,
                 type: 'admin'
